@@ -1,1 +1,1 @@
-# ITAcademy project 
+# ITAcademy project's for course

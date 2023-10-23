@@ -1,27 +1,43 @@
-function cubes() {
-    let sum1 = 0
-    let sum2 = 0
-    let x = 0
-    let result = ""
-    for (let i = 1; i < 7; i++) {  // перебор игроков
-        x = Math.floor(Math.random() * (7 - 1) + 1) // псевдорандомное число от 1 до 6
-        if (i % 2 == 0) { // разделение на сумму первого и второго игрока
-            sum2 += x
-        }
-        else {
-            sum1 += x
-        }
-    }
-    if (sum1 > sum2) { // условия победы
-        result = "First player wins"
-    }
-    else if (sum2 > sum1) {
-        result = "Second player wins"
-    }
-    else {
-        result = "Draw!"
-    } 
-    return result
+function rollDice() {   // случайый бросок кубика
+    return Math.floor(Math.random() * 6) + 1;
 }
 
-console.log(cubes())
+function sumDiceRolls(diceRolls) {  // определение суммы бросков
+    return diceRolls.reduce((sum, roll) => sum + roll, 0);
+}
+
+function playGame(numPlayers, numRolls) {
+    const players = [];
+
+    for (let i = 0; i < numPlayers; i++) {  // инициализация игроков
+        players.push([]);
+    }
+
+    for (let i = 0; i < numRolls; i++) {    // броски кубика
+        for (let j = 0; j < numPlayers; j++) {
+        players[j].push(rollDice());
+        }
+    }
+
+    const sums = players.map(sumDiceRolls);
+
+    for (let i = 0; i < numPlayers; i++) {  // результат
+        console.log(`Player ${i + 1}: ${players[i].join(", ")} Sum: ${sums[i]}`);
+    }
+
+    const maxSum = Math.max(...sums); // определение победителя
+    const winners = sums.reduce((acc, sum, index) => {
+        if (sum === maxSum) {
+        acc.push(index + 1);
+        }
+        return acc;
+    }, []);
+
+    if (winners.length === 1) {
+        console.log(`Player ${winners[0]} win!`);
+    } else {
+        console.log(`Draw! Winners: ${winners.join(", ")}`);
+    }
+}
+
+playGame(3, 5); // количество игроков и количетсво бросков кубика

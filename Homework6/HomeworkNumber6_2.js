@@ -1,15 +1,21 @@
-function Friday13() {
-    let count = 0;
-    for (let year=2000; year <= 2023; year++) { // перебор годов
-        for (let month=0; month<12; month++) {  // перебор месяцев
-            let d = new Date(year,month,13); // задание года поиска
-            if(d.getDay() == 5 && d.setFullYear(year,month,13) < Date.now()) { // условия поиска пятницы 13
-                count++;
-            }
-        }
-    }
-    return count
+function isFriday13(date) {
+    return date.getDay() === 5 && date.getDate() === 13;
 }
 
-console.log(Friday13())
+function countFriday13() {
+    const startDate = new Date("2000-01-01");
+    const currentDate = new Date();
+    let count = 0;
 
+    while (startDate <= currentDate) {
+        if (isFriday13(startDate)) {
+        count++;
+        }
+        startDate.setDate(startDate.getDate() + 1);
+    }
+
+    return count;
+}
+
+const friday13thCount = countFriday13();
+console.log("Количество пятниц 13-ого с 01.01.2000 до сегодня:", friday13thCount);

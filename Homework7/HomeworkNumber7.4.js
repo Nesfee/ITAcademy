@@ -1,10 +1,10 @@
 function countMatches(number1, number2) {
-    var number1String = String(number1);
-    var number2String = String(number2);
-    var matchPosition = 0;
-    var matchValue = 0;
+    let number1String = String(number1);
+    let number2String = String(number2);
+    let matchPosition = 0;
+    let matchValue = 0;
   
-    for (var i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
       if (number1String[i] === number2String[i]) {
         matchPosition++;
       } else if (number2String.includes(number1String[i])) {

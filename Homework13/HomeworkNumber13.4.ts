@@ -13,7 +13,7 @@
  * @param {Array} input
  * @return {Array | Function}
  */
-export function map(mapper, input) {
+export function map(mapper: (value: any, index: number, array: any[]) => any, input: Array<any>): Array<any> | Function {
     if (arguments.length === 0) {
         return map;
     }
@@ -45,7 +45,7 @@ export function map(mapper, input) {
  * @param {Array} input
  * @return {Array | Function}
  */
-export function filter(filterer, input) {
+export function filter(filterer: (value: any, index: number, array: any[]) => boolean, input: Array<any>): Array<any> | Function {
     if (arguments.length === 0) {
         return filter;
     }
@@ -73,7 +73,7 @@ export function filter(filterer, input) {
  * @param {Number} b
  * @return {Number | Function}
  */
-export function add(a, b) {
+export function add(a: number, b: number): number | Function {
     if (arguments.length === 0) {
         return add;
     }

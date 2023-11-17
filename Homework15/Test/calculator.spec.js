@@ -18,7 +18,7 @@ describe('Calculator', () => {
   describe('multiply', () => {
     test.each`
       input              | expected
-      ${[0, 0, 4]}       | ${0}
+      ${[2, 2, 4]}       | ${16}
       ${[-1, 0, 1]}      | ${0}
       ${[-3, -4, 1]}     | ${12}
     `('returns the product of $input', async ({ input, expected }) => {
@@ -64,8 +64,52 @@ describe('Calculator', () => {
     });
   });
 
-  describe('Negative test', () => {
-    test('returns NaN for non-numeric arguments', async () => {
+  describe('Tests with no parameters', () => {
+    test('Returns 0 with no parameters', async () => {
+      const addResult = await calculator.add();
+      await expect(addResult).toBe(0);
+    });
+
+    test('Returns 1 with no parameters', async () => {
+      const multiplyResult = await calculator.multiply();
+      await expect(multiplyResult).toBe(1);
+    });
+
+    test('Returns NaN with no parameters', async () => {
+      const subtractionResult = await calculator.subtraction();
+      await expect(subtractionResult).toBe(NaN);
+
+      const divideResult = await calculator.divide();
+      await expect(divideResult).toBe(NaN);
+
+      const exponentiationResult = await calculator.exponentiation();
+      await expect(exponentiationResult).toBe(NaN);
+    });
+  });
+
+  describe('Tests with only one parameter', () => {
+    test('Should returns 1', async () => {
+      const addResult = await calculator.add(1);
+      await expect(addResult).toBe(1);
+
+      const multiplyResult = await calculator.multiply(1);
+      await expect(multiplyResult).toBe(1);
+
+      const exponentiationResult = await calculator.exponentiation(1);
+      await expect(exponentiationResult).toBe(1);
+    });
+
+    test('Should returns NaN', async () => {
+      const subtractionResult = await calculator.subtraction(1);
+      await expect(subtractionResult).toBe(NaN);
+
+      const divideResult = await calculator.divide(1);
+      await expect(divideResult).toBe(NaN);
+    });
+  });
+
+  describe('Negative tests', () => {
+    test('Returns NaN for non-numeric arguments', async () => {
       const addResult = await calculator.add('abc', 'bar', 'jgt');
       await expect(addResult).toBeNaN();
 
@@ -82,7 +126,7 @@ describe('Calculator', () => {
       await expect(exponentiationResult).toBeNaN();
     });
 
-    test('returns Infinity for division by zero', async () => {
+    test('Returns Infinity for division by zero', async () => {
       const result = await calculator.divide(10, 0);
       await expect(result).toBe(Infinity);
     });

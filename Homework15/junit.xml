@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="22" failures="3" errors="0" time="0.635">
-  <testsuite name="Calculator" errors="0" failures="3" skipped="0" timestamp="2023-11-17T08:22:50" time="0.56" tests="22">
+<testsuites name="jest tests" tests="22" failures="2" errors="0" time="0.726">
+  <testsuite name="Calculator" errors="0" failures="2" skipped="0" timestamp="2023-11-17T18:11:15" time="0.635" tests="22">
     <testcase classname="Calculator add returns the sum of [1, 2, 3]" name="Calculator add returns the sum of [1, 2, 3]" time="0.003">
     </testcase>
     <testcase classname="Calculator add returns the sum of [4, -1, 0]" name="Calculator add returns the sum of [4, -1, 0]" time="0">
     </testcase>
-    <testcase classname="Calculator add returns the sum of [-4, -4, 4]" name="Calculator add returns the sum of [-4, -4, 4]" time="0.001">
+    <testcase classname="Calculator add returns the sum of [-4, -4, 4]" name="Calculator add returns the sum of [-4, -4, 4]" time="0">
     </testcase>
     <testcase classname="Calculator multiply returns the product of [2, 2, 4]" name="Calculator multiply returns the product of [2, 2, 4]" time="0">
     </testcase>
@@ -19,43 +19,35 @@ Received: -0
     </testcase>
     <testcase classname="Calculator multiply returns the product of [-3, -4, 1]" name="Calculator multiply returns the product of [-3, -4, 1]" time="0">
     </testcase>
-    <testcase classname="Calculator subtraction subtracts 2 from 10" name="Calculator subtraction subtracts 2 from 10" time="0">
+    <testcase classname="Calculator subtraction subtracts 2 from 10" name="Calculator subtraction subtracts 2 from 10" time="0.001">
     </testcase>
-    <testcase classname="Calculator subtraction subtracts 5 from 0" name="Calculator subtraction subtracts 5 from 0" time="0.001">
+    <testcase classname="Calculator subtraction subtracts 5 from 0" name="Calculator subtraction subtracts 5 from 0" time="0">
     </testcase>
-    <testcase classname="Calculator subtraction subtracts -6 from -4" name="Calculator subtraction subtracts -6 from -4" time="0">
+    <testcase classname="Calculator subtraction subtracts -6 from -4" name="Calculator subtraction subtracts -6 from -4" time="0.001">
     </testcase>
-    <testcase classname="Calculator divide divides 10 by 2" name="Calculator divide divides 10 by 2" time="0.001">
+    <testcase classname="Calculator divide divides 10 by 2" name="Calculator divide divides 10 by 2" time="0">
     </testcase>
-    <testcase classname="Calculator divide divides -25 by 5" name="Calculator divide divides -25 by 5" time="0">
+    <testcase classname="Calculator divide divides -25 by 5" name="Calculator divide divides -25 by 5" time="0.001">
     </testcase>
     <testcase classname="Calculator divide divides -4 by -4" name="Calculator divide divides -4 by -4" time="0">
     </testcase>
-    <testcase classname="Calculator exponentiation returns the square of 2" name="Calculator exponentiation returns the square of 2" time="0.001">
+    <testcase classname="Calculator exponentiation returns the square of 2" name="Calculator exponentiation returns the square of 2" time="0">
     </testcase>
     <testcase classname="Calculator exponentiation returns the square of -6" name="Calculator exponentiation returns the square of -6" time="0">
     </testcase>
-    <testcase classname="Calculator exponentiation returns the square of 0" name="Calculator exponentiation returns the square of 0" time="0.001">
+    <testcase classname="Calculator exponentiation returns the square of 0" name="Calculator exponentiation returns the square of 0" time="0">
     </testcase>
     <testcase classname="Calculator Tests with no parameters Returns 0 with no parameters" name="Calculator Tests with no parameters Returns 0 with no parameters" time="0">
     </testcase>
     <testcase classname="Calculator Tests with no parameters Returns 1 with no parameters" name="Calculator Tests with no parameters Returns 1 with no parameters" time="0">
     </testcase>
-    <testcase classname="Calculator Tests with no parameters Returns NaN with no parameters" name="Calculator Tests with no parameters Returns NaN with no parameters" time="0">
+    <testcase classname="Calculator Tests with no parameters Returns NaN with no parameters" name="Calculator Tests with no parameters Returns NaN with no parameters" time="0.001">
     </testcase>
-    <testcase classname="Calculator Tests with only one parameter Should returns 1" name="Calculator Tests with only one parameter Should returns 1" time="0.001">
+    <testcase classname="Calculator Tests with only one parameter Should returns 1" name="Calculator Tests with only one parameter Should returns 1" time="0">
     </testcase>
     <testcase classname="Calculator Tests with only one parameter Should returns NaN" name="Calculator Tests with only one parameter Should returns NaN" time="0">
-      <failure>Error: expect(received).toThrow()
-
-Matcher error: received value must be a function
-
-Received has type:  number
-Received has value: NaN
-    at Object.toThrow (C:\Users\kiril\.vscode\GitHub\ITAcademy\Homework15\Test\calculator.spec.js:104:39)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
-    <testcase classname="Calculator Negative tests Returns NaN for non-numeric arguments" name="Calculator Negative tests Returns NaN for non-numeric arguments" time="0">
+    <testcase classname="Calculator Negative tests Returns NaN for non-numeric arguments" name="Calculator Negative tests Returns NaN for non-numeric arguments" time="0.001">
       <failure>Error: expect(received).toBeNaN()
 
 Received: &quot;0abcbarjgt&quot;

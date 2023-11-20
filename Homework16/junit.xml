@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="5" failures="0" errors="0" time="1.757">
-  <testsuite name="API positive tests" errors="0" failures="0" skipped="0" timestamp="2023-11-20T14:18:52" time="1.693" tests="5">
-    <testcase classname="API positive tests Get all books" name="API positive tests Get all books" time="0.405">
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="2.134">
+  <testsuite name="API positive tests" errors="0" failures="0" skipped="0" timestamp="2023-11-20T16:20:09" time="2.072" tests="6">
+    <testcase classname="API positive tests Get all books" name="API positive tests Get all books" time="0.515">
     </testcase>
-    <testcase classname="API positive tests Get a specific book" name="API positive tests Get a specific book" time="0.208">
+    <testcase classname="API positive tests Get a specific book" name="API positive tests Get a specific book" time="0.228">
     </testcase>
-    <testcase classname="API positive tests Add a new book" name="API positive tests Add a new book" time="0.157">
+    <testcase classname="API positive tests Add a new book" name="API positive tests Add a new book" time="0.197">
     </testcase>
-    <testcase classname="API positive tests Update a book" name="API positive tests Update a book" time="0.19">
+    <testcase classname="API positive tests Update a book" name="API positive tests Update a book" time="0.199">
     </testcase>
-    <testcase classname="API positive tests Delete a book" name="API positive tests Delete a book" time="0.193">
+    <testcase classname="API positive tests Delete a book" name="API positive tests Delete a book" time="0.196">
+    </testcase>
+    <testcase classname="API negative tests Should return schema valid false" name="API negative tests Should return schema valid false" time="0.195">
     </testcase>
   </testsuite>
 </testsuites>

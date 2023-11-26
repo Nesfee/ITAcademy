@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="9.02">
+  <testsuite name="ChromeDriver Test" errors="0" failures="0" skipped="0" timestamp="2023-11-26T18:35:51" time="8.952" tests="3">
+    <testcase classname="ChromeDriver Test should open the ChromeDriver website" name="ChromeDriver Test should open the ChromeDriver website" time="2.123">
+    </testcase>
+    <testcase classname="ChromeDriver Test should click on Chrome Extensions in the header, check the new title and make highlight" name="ChromeDriver Test should click on Chrome Extensions in the header, check the new title and make highlight" time="2.643">
+    </testcase>
+    <testcase classname="Search Test should search for the word &quot;driver&quot;" name="Search Test should search for the word &quot;driver&quot;" time="3.482">
+    </testcase>
+  </testsuite>
+</testsuites>

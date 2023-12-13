@@ -1,0 +1,19 @@
+{
+  "name": "homework22",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "cypress": "^13.6.1",
+    "cypress-xpath": "^2.0.1"
+  }
+}

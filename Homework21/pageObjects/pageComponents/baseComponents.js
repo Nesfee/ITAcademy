@@ -1,5 +1,0 @@
-class BaseComponents  {
-
-}
-
-export { BaseComponents };

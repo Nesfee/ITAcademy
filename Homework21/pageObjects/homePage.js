@@ -1,12 +1,40 @@
 import BasePage from "./basePage";
 
-class HomePage {
+class HomePage extends BasePage {
   constructor(page) {
-    this.page = page;
+    super(page);
   }
 
-  async visit(url) {
-    await this.page.goto(url);
+  get searchButton() {
+    return this.page.locator('button.DocSearch.DocSearch-Button');
+  }
+
+  get searchField() {
+    return this.page.locator('input.DocSearch-Input');
+  }
+
+  get searchResult() {
+    return this.page.locator('xpath=//a[@href="/docs/locators"]//span[@class="DocSearch-Hit-title"]');
+  }
+
+  get lightModeButton() {
+    return this.page.locator('button.clean-btn.toggleButton_gllP');
+  }
+
+  get envListField() {
+    return this.page.locator('div.navbar__item.dropdown.dropdown--hoverable');
+  }
+
+  get envCurrentField() {
+    return this.page.locator("//div[@class='navbar__item dropdown dropdown--hoverable']//li[1]");
+  }
+
+  get envPythonField() {
+    return this.page.locator("//div[@class='navbar__item dropdown dropdown--hoverable']//li[2]");
+  }
+
+  get startButton() {
+    return this.page.locator("//a[@class='getStarted_Sjon']");
   }
 
   async getTitle() {
@@ -14,20 +42,20 @@ class HomePage {
   }
 
   async makeSearch() {
-    await this.page.locator("button.DocSearch.DocSearch-Button").click();
-    await this.page.locator("input.DocSearch-Input").fill('Locators');
-    return this.page.textContent('xpath=//a[@href="/docs/locators"]//span[@class="DocSearch-Hit-title"]');
+    await this.searchButton.click();
+    await this.searchField.fill('Locators');
+    return this.searchResult.textContent();
   }
 
   async changePageColor() {
-    await this.page.locator("button.clean-btn.toggleButton_gllP").click();
-    return this.page.locator("button.clean-btn.toggleButton_gllP").getAttribute("title");
+    await this.lightModeButton.click();
+    return this.lightModeButton.getAttribute("title");
   }
 
   async changeEnv() {
-    await this.page.locator("div.navbar__item.dropdown.dropdown--hoverable").hover();
-    await this.page.locator("//div[@class='navbar__item dropdown dropdown--hoverable']//li[2]").click();
-    return this.page.textContent("//div[@class='navbar__item dropdown dropdown--hoverable']//li[1]")
+    await this.envListField.hover();
+    await this.envPythonField.click();
+    return this.envCurrentField.textContent();
   }
 
 }

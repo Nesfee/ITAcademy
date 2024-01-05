@@ -29,4 +29,4 @@ class MainPage extends Page {
 
 }
 
-module.exports = MainPage;
+module.exports = new MainPage();

@@ -9,10 +9,6 @@ class MainPage extends Page {
     return $("//a[@class='link user-bar__item']")
   }
 
-  get myOzButton() {
-    return $("//div[@class='user-bar__item']//a[@class='link user-bar__item']")
-  }
-
   get userName() {
     return $("//span[@class='user__name']")
   }

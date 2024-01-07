@@ -5,6 +5,18 @@ class navComponents extends BaseComponents {
     super();
   }
 
+  get shoppingCardButton() {
+    return $('//a[@class="link user-bar__item user-bar__cart"]')
+  }
+
+  get myOzButton() {
+    return $("//div[@class='user-bar__item']//a[@class='link user-bar__item']")
+  }
+
+  get myFavoriteButton() {
+    return $("//div[@class='header__user-bar user-bar']/a[@class='link user-bar__item']")
+  }
+
   get leftNavCategories() {
     return $$('//ul[@class="main-nav__list"]/li')
   }

@@ -7,12 +7,12 @@ import itemPage from "../pageobjects/itemPage.js";
 import { SEARCH_TEXT, INVALID_TEXT, SEARCH_ERROR_MASSAGE } from "../helpers/constants.js";
 
 
-describe('Search tests', () => {
+describe.skip('Search tests', () => {
     beforeEach(async () => {
         await mainPage.navigate("https://oz.by/")
     });
 
-    it.skip('should search items by text and get true titles', async () => {
+    it('should search items by text and get true titles', async () => {
         for (let textKey in SEARCH_TEXT) {
             await searchComponents.searchByText(SEARCH_TEXT[textKey]);
             await searchResultPage.chooseItemByNumber(1);
@@ -20,7 +20,7 @@ describe('Search tests', () => {
         }
     })
 
-    it.skip('should search incorrect items and get error massage', async () => {
+    it('should search incorrect items and get error massage', async () => {
        await searchComponents.searchByTextWithButton(INVALID_TEXT);
        expect(await (searchResultPage.invalidSearchText).getText()).to.equal(SEARCH_ERROR_MASSAGE)
     })

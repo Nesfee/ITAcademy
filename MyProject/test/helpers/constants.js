@@ -22,6 +22,7 @@ export const SEARCH_TEXT = {
 
 export const INVALID_TEXT = '/'
 export const SEARCH_ERROR_MASSAGE = 'Советы для поиска'
+export const EMPTY_SHOPPING_CARD_NOTIFICATION = "корзине пусто"
 
 export const NAV_TESTING_DATA = {
     DATA_1: {

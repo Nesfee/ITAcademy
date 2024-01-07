@@ -9,6 +9,14 @@ class ItemPage extends Page {
     return $("//h1")
   }
 
+  get putItemInShoppingCardButton() {
+    return $('.first-button')
+  }
+
+  async putItemInShoppingCard() {
+    await this.click(await this.putItemInShoppingCardButton)
+  }
+
 }
 
 export default new ItemPage();

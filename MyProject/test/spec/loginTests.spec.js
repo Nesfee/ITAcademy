@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import mainPage from "../pageobjects/mainPage.js"
 import loginComponents from "../pageobjects/pageComponents/loginComponents.js";
+import navComponents from "../pageobjects/pageComponents/navComponents.js";
 import { credentials } from "../data/credentials.js"
 import { PASSWORD_ERROR_NOTIFICATION, EMAIL_ERROR_NOTIFICATION, NO_EMAIL_ERROR_NOTIFICATION, NO_PASSWORD_ERROR_NOTIFICATION, INCORRECT_EMAIL_ERROR_NOTIFICATION, PHONE_ERROR_NOTIFICATION, INCORRECT_PHONE_ERROR_NOTIFICATION, NOT_REGISTERED_PHONE_ERROR_NOTIFICATION, USER_ID } from '../helpers/constants.js'
 
@@ -14,7 +15,7 @@ describe.skip('Login page tests', () => {
         it('should login with valid data', async () => {
             await loginComponents.loginWithEmailButton.click();
             await loginComponents.loginWithEmail(credentials.validLoginData.login, credentials.validLoginData.password);
-            await mainPage.myOzButton.moveTo();
+            await navComponents.myOzButton.moveTo();
             expect(await mainPage.userName.getText()).to.equal(USER_ID)
         })
 

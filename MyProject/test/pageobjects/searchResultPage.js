@@ -21,6 +21,10 @@ class SearchResultPage extends Page {
     return $$("//div[@class='products__grid viewer-type-card--js-active']//div[@class='products__item item product-card ']")
   }
 
+  get titleOfEmptyShoppingCard() {
+    return $('//div[@class="i-textual__plain i-textual__plain_arrow i-textual__plain_limited"]')
+  }
+
   async chooseItemByNumber(number) {
     this.click(await this.searchItems[number - 1])
   }

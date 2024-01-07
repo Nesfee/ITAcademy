@@ -5,6 +5,10 @@ class SearchResultPage extends Page {
     super()
   }
 
+  get itemTitle(){
+    return $('//h1')
+  }
+
   get categoriesTitle() {
     return $('//li[@itemprop="itemListElement"][last()]')
   }

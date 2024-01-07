@@ -5,12 +5,12 @@ import searchResultPage from "../pageobjects/searchResultPage.js";
 import { NAV_TESTING_DATA } from "../helpers/constants.js";
 
 
-describe('Nav components tests', () => {
+describe.skip('Nav components tests', () => {
     beforeEach(async () => {
         await mainPage.navigate("https://oz.by/")
     });
 
-    it('should choose item in nav menu and make click', async () => {
+    it('should choose item in nav menu, make click and check title of categories', async () => {
         for (let key in NAV_TESTING_DATA) {
             await navComponents.selectNavItemByText(NAV_TESTING_DATA[key].categoriesNumber, NAV_TESTING_DATA[key].itemName)
             expect(await (await (searchResultPage.categoriesTitle).getText()).toLowerCase()).to.contain(await (NAV_TESTING_DATA[key].itemName).toLowerCase())

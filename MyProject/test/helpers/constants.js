@@ -23,6 +23,8 @@ export const SEARCH_TEXT = {
 export const INVALID_TEXT = '/'
 export const SEARCH_ERROR_MASSAGE = 'Советы для поиска'
 export const EMPTY_SHOPPING_CARD_NOTIFICATION = "корзине пусто"
+export const ITEM_IN_FAVORITE_CONDITION = "product-card__favorite like like_active"
+export const ITEM_NOT_IN_FAVORITE_CONDITION = "product-card__favorite like"
 
 export const NAV_TESTING_DATA = {
     DATA_1: {

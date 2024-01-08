@@ -13,6 +13,10 @@ class ItemPage extends Page {
     return $('.first-button')
   }
 
+  get putItemInFavorite() {
+    return $('//div[@class="b-product__media"]//label')
+  }
+
   async putItemInShoppingCard() {
     await this.click(await this.putItemInShoppingCardButton)
   }

@@ -59,11 +59,6 @@ class FilterComponents extends BaseComponents {
     return this.click(await this.filterRatingOfItem(starsNumber))
   }
 
-  async selectAgreeButton() {
-    return this.click(await this.filterAgreeButton)
-  }
-
-
 }
 
 export default new FilterComponents();

@@ -17,10 +17,6 @@ class ItemPage extends Page {
     return $('//div[@class="b-product__media"]//label')
   }
 
-  async putItemInShoppingCard() {
-    await this.click(await this.putItemInShoppingCardButton)
-  }
-
 }
 
 export default new ItemPage();

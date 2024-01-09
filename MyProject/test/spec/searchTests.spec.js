@@ -30,7 +30,7 @@ describe.skip('Search tests', () => {
         await filterComponents.selectGroupOfItemByNumber(1);
         await filterComponents.selectCategoriesOfItemByName("Книги");
         await filterComponents.selectPriceOfItem("37", "200");
-        await filterComponents.selectAgreeButton();
+        await filterComponents.filterAgreeButton.click();
         await searchResultPage.chooseItemByNumber(1);
         expect(await (await searchResultPage.itemTitle.getText()).toLowerCase()).to.contain((SEARCH_TEXT.TEXT_1).toLowerCase())
      })

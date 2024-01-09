@@ -22,7 +22,7 @@ describe('Critical path tests', () => {
     it.skip('should find item, add item to shopping card and remove it', async () => {
         await searchComponents.searchByTextWithButton(SEARCH_TEXT.TEXT_1);
         await searchResultPage.chooseItemByNumber(1);
-        await itemPage.putItemInShoppingCard();
+        await itemPage.putItemInShoppingCardButton.click();
         await navComponents.shoppingCardButton.click();
         await checkoutPage.removeItemFromShoppingCard(1)
         expect(await searchResultPage.titleOfEmptyShoppingCard.getText()).to.contain(EMPTY_SHOPPING_CARD_NOTIFICATION)

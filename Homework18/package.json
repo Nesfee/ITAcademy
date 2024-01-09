@@ -1,0 +1,19 @@
+{
+  "name": "homework18",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --testTimeout=5000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^119.0.1",
+    "jest": "^29.7.0",
+    "jest-html-reporters": "^3.1.4",
+    "jest-junit": "^16.0.0",
+    "selenium-webdriver": "^4.15.0"
+  }
+}

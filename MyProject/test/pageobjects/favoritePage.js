@@ -15,13 +15,13 @@ class FavoritePage extends Page {
 
   async addItemToFavorite(itemNumber) {
     await this.click(await this.addItemToFavoriteButton[itemNumber - 1]) 
-    await browser.pause(100) // Загрузка нового состояния элемента
+    await browser.pause(500) // Загрузка нового состояния элемента
     return this.removeItemFromFavoriteButtons[itemNumber - 1].getAttribute("class");
   }
 
   async removeItemFromFavorite(itemNumber) {
     await this.click(await this.removeItemFromFavoriteButtons[itemNumber - 1]);
-    await browser.pause(100) // Загрузка нового состояния элемента
+    await browser.pause(500) // Загрузка нового состояния элемента
     return this.addItemToFavoriteButton[itemNumber - 1].getAttribute("class");
   }
 

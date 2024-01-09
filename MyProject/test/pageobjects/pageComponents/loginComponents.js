@@ -42,6 +42,7 @@ class SearchComponents extends BaseComponents {
   }
 
   async loginWithEmail(login, password) {
+    await this.click(await this.loginWithEmailButton);
     await this.setValue(await this.loginEmailField, login)
     await this.setValue(await this.loginPasswordField, password)
     await this.click(await this.loginEmailButton)

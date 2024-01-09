@@ -9,15 +9,16 @@ export const INCORRECT_EMAIL_ERROR_NOTIFICATION = "Введите коррект
 export const PHONE_ERROR_NOTIFICATION = "Введите номер мобильного телефона белорусских опереторов"
 export const INCORRECT_PHONE_ERROR_NOTIFICATION = "Введите корректный номер мобильного телефона"
 export const NOT_REGISTERED_PHONE_ERROR_NOTIFICATION = "Этот номер телефона не зарегистрирован. Проверьте его на ошибки, введите другой или зарегистрируйтесь"
+export const PHONE_REQUEST_CODE_NOTIFICATION = "Введите код"
 
 export const USER_ID = "oz32648970"
 
 export const SEARCH_TEXT = {
     TEXT_1: "Гарри",
     TEXT_2: "ва",
-    TEXT_3: "123",
+    TEXT_3: "11",
     TEXT_4: "эн",
-    TEXT_5: "JavaScript"
+    TEXT_5: "Java"
 }
 
 export const INVALID_TEXT = '/'

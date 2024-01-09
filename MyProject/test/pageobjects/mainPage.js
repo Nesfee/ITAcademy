@@ -2,7 +2,7 @@ import { Page } from "./page.js";
 
 class MainPage extends Page {
   constructor() {
-    super()
+    super();
   }
 
   get loginButton() {
@@ -13,7 +13,7 @@ class MainPage extends Page {
     return $("//span[@class='user__name']")
   }
 
-  
+
 }
 
 export default new MainPage();

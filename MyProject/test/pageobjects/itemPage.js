@@ -6,10 +6,10 @@ class ItemPage extends Page {
   }
 
   get itemTitle() {
-    return $("//h1")
+    return $("//div[@class='b-product-title__heading']//h1")
   }
 
-  get putItemInShoppingCardButton() {
+  get putItemInShoppingCartButton() {
     return $('.first-button')
   }
 

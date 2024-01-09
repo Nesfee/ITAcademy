@@ -5,7 +5,7 @@ class navComponents extends BaseComponents {
     super();
   }
 
-  get shoppingCardButton() {
+  get shoppingCartButton() {
     return $('//a[@class="link user-bar__item user-bar__cart"]')
   }
 
@@ -13,8 +13,16 @@ class navComponents extends BaseComponents {
     return $("//div[@class='user-bar__item']//a[@class='link user-bar__item']")
   }
 
+  get muOzSecretButton() {
+    return $('//div[@class="nav-menu__row pt-2"]//span[contains(text(), "Мой OZ")]')
+  }
+
   get myFavoriteButton() {
     return $("//div[@class='header__user-bar user-bar']/a[@class='link user-bar__item']")
+  }
+
+  get quitButton() {
+    return $('//a[contains(text(), "Выйти")]')
   }
 
   get leftNavCategories() {
@@ -29,6 +37,13 @@ class navComponents extends BaseComponents {
     await this.moveTo(await this.leftNavCategories[categoriesNumber - 1]);
     await this.click(await this.leftNavItems(itemName))
   }
+
+  async logoutFromAccount() {
+    await this.moveTo(await this.myOzButton);
+    await this.click(await this.muOzSecretButton);
+    await this.click(await this.quitButton);
+  }
+  
 }
 
 export default new navComponents();

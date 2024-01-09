@@ -11,28 +11,27 @@ import { SEARCH_TEXT, EMPTY_SHOPPING_CARD_NOTIFICATION, ITEM_IN_FAVORITE_CONDITI
 import { credentials } from "../data/credentials.js"
 
 
-describe('Critical path tests', () => {
-    beforeEach(async () => {
+describe.skip('Critical path tests', () => {
+    before(async () => {
         await mainPage.navigate("https://oz.by/")
-        await mainPage.loginButton.click();
-        await loginComponents.loginWithEmailButton.click();
+        await itemPage.click(await mainPage.loginButton);
         await loginComponents.loginWithEmail(credentials.validLoginData.login, credentials.validLoginData.password);
     });
 
-    it.skip('should find item, add item to shopping card and remove it', async () => {
+    it('should find item, add item to shopping card and remove it', async () => {
         await searchComponents.searchByTextWithButton(SEARCH_TEXT.TEXT_1);
         await searchResultPage.chooseItemByNumber(1);
-        await itemPage.putItemInShoppingCardButton.click();
-        await navComponents.shoppingCardButton.click();
-        await checkoutPage.removeItemFromShoppingCard(1)
-        expect(await searchResultPage.titleOfEmptyShoppingCard.getText()).to.contain(EMPTY_SHOPPING_CARD_NOTIFICATION)
+        await itemPage.click(await itemPage.putItemInShoppingCartButton);
+        await navComponents.click(await navComponents.shoppingCartButton);
+        await checkoutPage.removeItemFromShoppingCart(1)
+        expect(await searchResultPage.titleOfEmptyShoppingCart.getText()).to.contain(EMPTY_SHOPPING_CARD_NOTIFICATION)
     })
 
     it('should find item, add item to favorite and remove it', async () => {
         await searchComponents.searchByTextWithButton(SEARCH_TEXT.TEXT_1);
         await searchResultPage.chooseItemByNumber(1);
-        await itemPage.putItemInFavorite.click();
-        await navComponents.myFavoriteButton.click();
+        await itemPage.click(await itemPage.putItemInFavorite);
+        await navComponents.click(await navComponents.myFavoriteButton);
         const itemCondition = await favoritePage.removeItemFromFavorite(1);
         expect(itemCondition).to.equal(ITEM_NOT_IN_FAVORITE_CONDITION)
     })

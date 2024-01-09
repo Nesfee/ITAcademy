@@ -25,13 +25,13 @@ class CheckoutPage extends Page {
     return $('//button[@class="i-button i-button_danger i-button_small remove-yes"]')
   }
 
-  async removeItemFromShoppingCard(itemNumber) {
+  async removeItemFromShoppingCart(itemNumber) {
     await this.click(await this.selectItemsCheckouts[itemNumber - 1]);
     await this.click(await this.removeItemsFromShoppingCardButton);
     await this.click(await this.removeItemsFromShoppingCardAgreeButton)
   }
 
-  async removeItemsFromShoppingCard() {
+  async clearShoppingCart() {
     await this.click(await this.selectAllItemsCheckout);
     await this.click(await this.removeItemsFromShoppingCardButton);
     await this.click(await this.removeItemsFromShoppingCardAgreeButton)

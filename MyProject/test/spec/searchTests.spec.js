@@ -27,10 +27,10 @@ describe.skip('Search tests', () => {
 
     it('should search item by filter and check true title of item', async () => {
         await searchComponents.searchByTextWithButton(SEARCH_TEXT.TEXT_1);
-        await filterComponents.selectGroupOfItemByNumber(1);
-        await filterComponents.selectCategoriesOfItemByName("Книги");
+        await filterComponents.click(await filterComponents.filterGroupOfItem[0])
+        await filterComponents.click(await filterComponents.filterCategoriesByName("Книги"))
         await filterComponents.selectPriceOfItem("37", "200");
-        await filterComponents.filterAgreeButton.click();
+        await filterComponents.click(await filterComponents.filterAgreeButton);
         await searchResultPage.chooseItemByNumber(1);
         expect(await (await searchResultPage.itemTitle.getText()).toLowerCase()).to.contain((SEARCH_TEXT.TEXT_1).toLowerCase())
      })

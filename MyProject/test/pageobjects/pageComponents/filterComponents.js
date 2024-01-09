@@ -37,27 +37,10 @@ class FilterComponents extends BaseComponents {
     return $(`//ul[@class="filters__simplist"]//span[contains(text(), "${categoriesName}")]`) 
   }
 
-
-  async selectGroupOfItemByNumber(groupNumber) {
-    await this.click(await this.filterGroupOfItem[groupNumber - 1])
-  }
-
-  async selectCategoriesOfItemByName(categoriesName) {
-    await this.click(await this.filterCategoriesByName(categoriesName))
-  }
-
-  async selectItemByStock(stockType) {      // First free is default mark
-    await this.click(await this.filterInStockItems[stockType - 1]) 
-  }
-
   async selectPriceOfItem(minPrice, maxPrice) {
     await this.setValue(await this.filterMinPriceOfItem, minPrice)
     await this.setValue(await this.filterMaxPriceOfItem, maxPrice)
   } 
-
-  async selectRatingOfItem(starsNumber) {       //не работает
-    return this.click(await this.filterRatingOfItem(starsNumber))
-  }
 
 }
 

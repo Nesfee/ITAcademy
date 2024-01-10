@@ -2,7 +2,7 @@ import { expect } from "chai";
 import mainPage from "../pageobjects/mainPage.js"
 import navComponents from "../pageobjects/pageComponents/navComponents.js";
 import searchResultPage from "../pageobjects/searchResultPage.js";
-import { NAV_TESTING_DATA } from "../helpers/constants.js";
+import { NAV_TESTING_DATA, ADDRESS_TEXT_INFO, STOCKS_AND_SALES_TITLE, BIG_SALES_TITLE } from "../helpers/constants.js";
 
 
 describe('Nav components tests', () => {
@@ -18,5 +18,19 @@ describe('Nav components tests', () => {
         }
     })
 
-    
+    it('should select store in city by name and get true title', async () => {
+            await navComponents.selectCityAndAddressOfStoreByName("minsk", "igumenskiy_trakt_14")
+            expect(await searchResultPage.infoAboutStore.getText()).to.contain(ADDRESS_TEXT_INFO)
+    })
+
+    it('should click on stocks and sales button and get true title', async () => {
+        await navComponents.click(await navComponents.stocksAndSalesButton);
+        expect(await searchResultPage.itemTitle.getText()).to.contain(STOCKS_AND_SALES_TITLE)
+    })
+
+    it('should click on big sales button and get true title', async () => {
+         await navComponents.click(await navComponents.bigSalesButton);
+        expect(await searchResultPage.categoriesTitle.getText()).to.contain(BIG_SALES_TITLE)
+    })
+
 })

@@ -25,6 +25,10 @@ class SearchResultPage extends Page {
     return $('//div[@class="i-textual__plain i-textual__plain_arrow i-textual__plain_limited"]')
   }
 
+  get infoAboutStore() {
+    return $('//div[@class="place-info__description content"]')
+  }
+
   async chooseItemByNumber(number) {
       await this.click(await this.searchItems[number - 1])
   }

@@ -26,6 +26,9 @@ export const SEARCH_ERROR_MASSAGE = 'Советы для поиска'
 export const EMPTY_SHOPPING_CARD_NOTIFICATION = "корзине пусто"
 export const ITEM_IN_FAVORITE_CONDITION = "product-card__favorite like like_active"
 export const ITEM_NOT_IN_FAVORITE_CONDITION = "product-card__favorite like"
+export const ADDRESS_TEXT_INFO = "Адрес магазина"
+export const STOCKS_AND_SALES_TITLE = "Акции и скидки"
+export const BIG_SALES_TITLE = "Новогодняя распродажа с большими скидками!"
 
 export const NAV_TESTING_DATA = {
     DATA_1: {

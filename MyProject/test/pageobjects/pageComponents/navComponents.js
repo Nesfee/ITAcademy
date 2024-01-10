@@ -29,6 +29,22 @@ class navComponents extends BaseComponents {
     return $$('//ul[@class="main-nav__list"]/li')
   }
 
+  get stocksAndSalesButton() {
+    return $('//a[contains(text(), "Акции и скидки")]')
+  }
+
+  get bigSalesButton() {
+    return $('//a[contains(text(), "Большие скидки %")]')
+  }
+
+  async cityByName(cityName) {
+    return $(`//div[@class="city-nav__body scrollbar city-nav__body_wide"]//a[@data-city="${cityName}"]`)
+  }
+
+  async storeInCityByAddressName(cityName, addressName) {
+    return $(`//div[@data-id="${cityName}"]/div[@class="city-nav__body scrollbar"]//div[@data-menu-store="${addressName}"]//a`)
+  }
+
   async leftNavItems(itemName) {
     return $(`//a[contains(text(), "${itemName}")]`)
   }
@@ -42,6 +58,12 @@ class navComponents extends BaseComponents {
     await this.moveTo(await this.myOzButton);
     await this.click(await this.muOzSecretButton);
     await this.click(await this.quitButton);
+  }
+
+  async selectCityAndAddressOfStoreByName(cityName, addressName) {
+    await this.moveTo(await this.leftNavCategories[11]);
+    await this.click(await this.cityByName(cityName))
+    await this.click(await this.storeInCityByAddressName(cityName, addressName))
   }
   
 }

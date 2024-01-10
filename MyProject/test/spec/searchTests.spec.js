@@ -7,7 +7,7 @@ import itemPage from "../pageobjects/itemPage.js";
 import { SEARCH_TEXT, INVALID_TEXT, SEARCH_ERROR_MASSAGE } from "../helpers/constants.js";
 
 
-describe.skip('Search tests', () => {
+describe('Search tests', () => {
     beforeEach(async () => {
         await mainPage.navigate("https://oz.by/")
     });

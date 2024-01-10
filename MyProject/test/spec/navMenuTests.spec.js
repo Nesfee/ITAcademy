@@ -5,7 +5,7 @@ import searchResultPage from "../pageobjects/searchResultPage.js";
 import { NAV_TESTING_DATA } from "../helpers/constants.js";
 
 
-describe.skip('Nav components tests', () => {
+describe('Nav components tests', () => {
     beforeEach(async () => {
         await mainPage.navigate("https://oz.by/")
     });

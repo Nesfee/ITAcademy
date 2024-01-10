@@ -18,8 +18,10 @@
     "@wdio/mocha-framework": "^8.27.0",
     "@wdio/spec-reporter": "^8.27.0",
     "allure-commandline": "^2.25.0",
+    "axios": "^1.6.5",
     "chai": "^4.3.10",
     "eslint": "^8.56.0",
+    "jsonschema": "^1.4.1",
     "rimraf": "^5.0.5",
     "yargs": "^17.7.2"
   }

@@ -11,7 +11,7 @@ import { SEARCH_TEXT, EMPTY_SHOPPING_CARD_NOTIFICATION, ITEM_IN_FAVORITE_CONDITI
 import { credentials } from "../data/credentials.js"
 
 
-describe.skip('Critical path tests', () => {
+describe('Critical path tests', () => {
     before(async () => {
         await mainPage.navigate("https://oz.by/")
         await itemPage.click(await mainPage.loginButton);

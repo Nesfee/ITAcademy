@@ -19,7 +19,7 @@ describe('Login page tests', () => {
             await navComponents.logoutFromAccount();
         })
 
-        it.skip('should login with valid mobile number', async () => {
+        it('should login with valid mobile number', async () => {
             await loginComponents.loginWithMobileNumber(credentials.validPhoneNumber);
             expect(await loginComponents.mobileCodeField.getAttribute('placeholder')).to.equal(PHONE_REQUEST_CODE_NOTIFICATION)
         }) 

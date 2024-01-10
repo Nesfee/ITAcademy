@@ -8,7 +8,8 @@ const argv = yargs(hideBin(process.argv)).argv;
 export const config = {
     runner: 'local',
     specs: [
-        './test/spec/**/*.js'
+        './test/spec/**/*.js',
+        // './testAPI/spec/**/*.js'
     ],
     exclude: [
         

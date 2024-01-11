@@ -2,7 +2,7 @@ import { expect } from "chai";
 import mainPage from "../pageobjects/mainPage.js"
 import navComponents from "../pageobjects/pageComponents/navComponents.js";
 import searchResultPage from "../pageobjects/searchResultPage.js";
-import { NAV_TESTING_DATA, ADDRESS_TEXT_INFO, STOCKS_AND_SALES_TITLE, BIG_SALES_TITLE } from "../helpers/constants.js";
+import { NAV_TESTING_DATA, ADDRESS_TEXT_INFO, STOCKS_AND_SALES_TITLE, BIG_SALES_TITLE, COUNTRY_NAME, ADDRESS_NAME } from "../helpers/constants.js";
 
 
 describe('Nav components tests', () => {
@@ -19,7 +19,7 @@ describe('Nav components tests', () => {
     })
 
     it('should select store in city by name and get true title', async () => {
-            await navComponents.selectCityAndAddressOfStoreByName("minsk", "igumenskiy_trakt_14")
+            await navComponents.selectCityAndAddressOfStoreByName(COUNTRY_NAME, ADDRESS_NAME)
             expect(await searchResultPage.infoAboutStore.getText()).to.contain(ADDRESS_TEXT_INFO)
     })
 

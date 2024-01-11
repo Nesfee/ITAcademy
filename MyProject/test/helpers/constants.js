@@ -12,6 +12,8 @@ export const NOT_REGISTERED_PHONE_ERROR_NOTIFICATION = "Этот номер те
 export const PHONE_REQUEST_CODE_NOTIFICATION = "Введите код"
 
 export const USER_ID = "oz32648970"
+export const COUNTRY_NAME = "minsk"
+export const ADDRESS_NAME = "igumenskiy_trakt_14"
 
 export const SEARCH_TEXT = {
     TEXT_1: "Гарри",
